@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+// import { Register, Login } from 'containers';
+// import { applyMiddleware, createStore } from 'redux';
+// import reducers from 'reducers';
+// import thunk from 'redux-thunk';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+// const store = createStore(reducers, applyMiddleware(thunk));
+
 ReactDOM.render(
-  <React.StrictMode>
+  // <Provider store={store}>
+  //   <Router>
+  //     <div>
+  //       <Route path="/register" component={Register} />
+  //       <Route path="/login" component={Login} />
+  //     </div>
+  //   </Router>
+  // </Provider>,
+  <div>
     <App />
-  </React.StrictMode>,
+  </div>,
   document.getElementById('root')
 );
 
