@@ -8,10 +8,10 @@ const KakaoBtn = styled.button`
     width: 300px;
     height: 45px;
     line-height: 44px;
-    color: #783c00;
+    color: #000000;
     background-color: #ffeb00;
     border: 1px solid transparent;
-    border-radius: 3px;
+    border-radius: 10px;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
@@ -53,7 +53,7 @@ function KakaoButton() {
     }
 
     return (
-        <KakaoBtn onClick={kakaoLoginClickHandler}>카카오 계정으로 로그인</KakaoBtn>
+        <KakaoBtn onClick={kakaoLoginClickHandler}>카카오톡으로 계속하기</KakaoBtn>
     )
 }
 
