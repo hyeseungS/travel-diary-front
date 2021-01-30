@@ -6,9 +6,8 @@ import NaverButton from './NaverButton';
 const LoginPageBlock = styled.div`
     width: 360px;
     height: 760px;
-
-    background: white;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.04);
+    border: solid 3px #c9c9c9;
+    background-color: #ffffff;
 
     margin: 0 auto;
     margin-top: 96px;
@@ -34,11 +33,19 @@ const LogoBlock = styled.div`
     height: 40px;
 
     color: #6fcf97;
-    font-family: Cocogoose-Regular;
-    font-size: 28px;
+    /* @font-face {
+    font-family: Cocogoose;
+    src: local(Cocogoose-Regular),
+        url(/path/to/Cocogoose-Regular.woff2) format("woff2"),
+        url(/path/to/Cocogoose-Regular.woff) format("woff"),
+        url(/path/to/Cocogoose-Regular.ttf) format("truetype");
     font-weight: normal;
-    font-stretch: normal;
     font-style: normal;
+    font-stretch: normal;
+    } */
+
+    font-family: Cocogoose;
+    font-size: 28px;
     line-height: normal;
     letter-spacing: -2.8px;
     text-align: center;
