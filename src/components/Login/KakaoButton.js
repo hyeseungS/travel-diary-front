@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 import kakaoLogo from '../../images/kakaologo.png';
@@ -8,7 +7,7 @@ const KakaoBtn = styled.button`
     width: 296px;
     height: 40px;
     background-color: #f6e24b;
-    border: 1px solid transparent;
+    border: 0px;
     border-radius: 10px;
     margin-top: 60px;
     text-align: left;
@@ -35,8 +34,8 @@ const KakaoBtn = styled.button`
         height: 16px;
         margin: 0 auto;
         margin-left: 48px;
-        margin-top: 4px;
-        margin-bottom: 18px;
+        margin-top: 12px;
+        margin-bottom: 12px;
         font-family: "Roboto";
         font-size: 14px;
         font-weight: bold;
@@ -53,8 +52,6 @@ function KakaoButton() {
     const [users, setUsers] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-
-    const history = useHistory();
 
     const kakaoLoginClickHandler = () => {
         const kakaoFetchUsers = async () => {
