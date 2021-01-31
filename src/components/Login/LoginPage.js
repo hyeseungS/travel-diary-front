@@ -9,9 +9,7 @@ const LoginPageBlock = styled.div`
     height: 760px;
     border: solid 3px #c9c9c9;
     background-color: #ffffff;
-
     margin: 0 auto;
-
     display: flex;
     flex-direction: column;
     align-items: center;

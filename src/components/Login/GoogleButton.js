@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 import googleLogo from '../../images/googlelogo.png';
@@ -8,7 +7,7 @@ const GoogleBtn = styled.button`
     width: 296px;
     height: 40px;
     background-color: #f2f2f2;
-    border: 1px solid transparent;
+    border: 0px;
     border-radius: 10px;
     text-align: left;
     
@@ -29,6 +28,7 @@ const GoogleBtn = styled.button`
         background-color: #f2f2f2;
     }
     span.buttonText {
+        @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
         vertical-align: middle;
         width: 107px;
         height: 16px;
@@ -36,7 +36,7 @@ const GoogleBtn = styled.button`
         margin-left: 60px;
         margin-top: 12px;
         margin-bottom: 12px;
-        font-family: "Roboto";
+        font-family: "Roboto", sans-serif;
         font-size: 14px;
         font-weight: bold;
         font-stretch: normal;
@@ -51,8 +51,6 @@ function GoogleButton() {
     const [users, setUsers] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-
-    const history = useHistory();
 
     const googleLoginClickHandler = () => {
         const googleFetchUsers = async () => {

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 import naverLogo from '../../images/naverlogo.png';
@@ -9,7 +8,7 @@ const NaverBtn = styled.div`
     width: 296px;
     height: 40px;
     background-color: #5ab133;
-    border: 1px solid transparent;
+    border: 0px;
     border-radius: 10px;
     text-align: left;
     
@@ -30,6 +29,7 @@ const NaverBtn = styled.div`
         background-color: #5ab133;
     }
     span.buttonText {
+        @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
         vertical-align: middle;
         width: 120px;
         height: 16px;
@@ -37,7 +37,7 @@ const NaverBtn = styled.div`
         margin-left: 56.9px;
         margin-top: 12px;
         margin-bottom: 12px;
-        font-family: "Roboto";
+        font-family: "Roboto", sans-serif;
         font-size: 14px;
         font-weight: bold;
         font-stretch: normal;
@@ -53,8 +53,6 @@ function NaverButton() {
     const [users, setUsers] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-
-    const history = useHistory();
 
     const naverLoginClickHandler = () => {
         const naverFetchUsers = async () => {
