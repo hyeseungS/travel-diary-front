@@ -29,6 +29,7 @@ const NaverBtn = styled.div`
         background-color: #5ab133;
     }
     span.buttonText {
+        @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
         vertical-align: middle;
         width: 120px;
         height: 16px;
@@ -36,7 +37,7 @@ const NaverBtn = styled.div`
         margin-left: 56.9px;
         margin-top: 12px;
         margin-bottom: 12px;
-        font-family: "Roboto";
+        font-family: "Roboto", sans-serif;
         font-size: 14px;
         font-weight: bold;
         font-stretch: normal;

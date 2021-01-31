@@ -5,6 +5,7 @@ import LoginPage from "./components/Login/LoginPage";
 const GlobalStyle = createGlobalStyle`
   body {
     background: #e9ecef
+    
   }
 `;
 function App() {

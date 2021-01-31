@@ -28,6 +28,7 @@ const GoogleBtn = styled.button`
         background-color: #f2f2f2;
     }
     span.buttonText {
+        @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
         vertical-align: middle;
         width: 107px;
         height: 16px;
@@ -35,7 +36,7 @@ const GoogleBtn = styled.button`
         margin-left: 60px;
         margin-top: 12px;
         margin-bottom: 12px;
-        font-family: "Roboto";
+        font-family: "Roboto", sans-serif;
         font-size: 14px;
         font-weight: bold;
         font-stretch: normal;
