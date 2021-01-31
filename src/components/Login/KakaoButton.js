@@ -1,77 +1,83 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import axios from 'axios';
+import kakaoLogo from '../../images/kakaologo.png';
 
 const KakaoBtn = styled.button`
-    display: inline-block;
-    width: 235px;
-    height: 50px;
-    color: #000000 85%;
-    background-color: #feeb00;
+    width: 296px;
+    height: 40px;
+    background-color: #f6e24b;
     border: 1px solid transparent;
-    font-family: Roboto;
-    border-radius: 5px;
-    white-space: nowrap;
+    border-radius: 10px;
+    margin-top: 60px;
+    text-align: left;
     
     cursor: pointer;
     &:hover {
         box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.2);
     }
 
-    span.icon {
-      background: url('') transparent 5px 50% no-repeat;
-      display: inline-block;
-      vertical-align: middle;
-      width: 42px;
-      height: 42px;
+    img.icon {
+        vertical-align: middle;
+        display: inline-block;
+        width: 20px;
+        height: 18.5px;
+        margin: 0 auto;
+        margin-left: 4px;
+        margin-top: 10px;
+        margin-bottom: 11.5px;
+        background-color: #f6e24b;
     }
     span.buttonText {
-      display: inline-block;
-      vertical-align: middle;
-      padding-left: 35px;
-      padding-right: 35px;
-      font-size: 14px;
-      font-weight: bold;
-      /* Use the Roboto font that is loaded in the <head> */
-      font-family: 'Roboto', sans-serif;
+        vertical-align: middle;
+        width: 146px;
+        height: 16px;
+        margin: 0 auto;
+        margin-left: 48px;
+        margin-top: 4px;
+        margin-bottom: 18px;
+        font-family: "Roboto";
+        font-size: 14px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #000000;
     }
 `;
 
-const { Kakao } = window;
-
 function KakaoButton() {
+
+    const [users, setUsers] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     const history = useHistory();
 
     const kakaoLoginClickHandler = () => {
-        Kakao.Auth.login({
-            success: (authObj) => {
-                fetch(`/user/login/kakao`, {
-                    method: "GET",
-                    header: {
-                        "Content-type": "application/json",
-                        Authorization: authObj.access_token,
-                    },
-                })
-                .then(res => res.json())
-                .then(res => {
-                    localStorage.setItem("Kakao_token", res.access_token);
-                    if(res.access_token) {
-                        history.push("/mainpage");
-                    }
-                })
-
-            },
-            fail: function(error) {
-                alert(JSON.stringify(error))
-            },
-        })
+        const kakaoFetchUsers = async () => {
+            try {
+                setUsers(null);
+                setError(null);
+                setLoading(true);
+                const response = await axios.get(
+                    'users/login/kakao'
+                );
+                setUsers(response.data);
+            } catch(e) {
+                setError(e);
+            }
+            setLoading(false);
+        };
+        kakaoFetchUsers();
     }
 
     return (
         <KakaoBtn onClick={kakaoLoginClickHandler}>
-            <span className="icon"></span>
-            <span className="buttonText">카카오 로그인</span>
+            <img src={kakaoLogo} alt="kakao" className="icon"/>
+            <span className="buttonText">카카오톡으로 로그인하기</span>
         </KakaoBtn>
     )
 }
