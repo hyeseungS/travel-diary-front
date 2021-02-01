@@ -43,6 +43,7 @@ function LoginPage() {
             <img src="" alt="logo"/>
             </LogoImageBlock>
             <LogoBlock><img src={travel} alt="travel"/></LogoBlock>
+            
             <Wrapper>
             <KakaoButton></KakaoButton>
             </Wrapper>
