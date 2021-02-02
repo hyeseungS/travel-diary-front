@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import GoogleButton from './GoogleButton';
 import KakaoButton from './KakaoButton';
 import NaverButton from './NaverButton';
-import travel from '../../images/Travel.png';
+import travel from '../../images/Travel.svg';
 
 const LoginPageBlock = styled.div`
     width: 360px;
@@ -43,7 +43,6 @@ function LoginPage() {
             <img src="" alt="logo"/>
             </LogoImageBlock>
             <LogoBlock><img src={travel} alt="travel"/></LogoBlock>
-            
             <Wrapper>
             <KakaoButton></KakaoButton>
             </Wrapper>

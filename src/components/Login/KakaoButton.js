@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import kakaoLogo from '../../images/kakaologo.png';
+import kakaoLogo from '../../images/kakaologo.svg';
 
 const KakaoBtn = styled.button`
     width: 296px;
     height: 40px;
     background-color: #f6e24b;
-    border: 0px;
+    border: 0;
+    outline: 0;
     border-radius: 10px;
     margin-top: 60px;
     text-align: left;

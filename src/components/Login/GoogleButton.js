@@ -7,7 +7,8 @@ const GoogleBtn = styled.button`
     width: 296px;
     height: 40px;
     background-color: #f2f2f2;
-    border: 0px;
+    border: 0;
+    outline: 0;
     border-radius: 10px;
     text-align: left;
     
