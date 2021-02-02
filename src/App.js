@@ -1,6 +1,7 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import LoginPage from "./components/Login/LoginPage";
+import MainPage from './components/MainPage';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -12,7 +13,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <LoginPage />
+      <MainPage />
     </>
   );
 }

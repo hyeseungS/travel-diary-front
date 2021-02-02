@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import naverLogo from '../../images/naverlogo.png';
+import naverLogo from '../../images/naverlogo.svg';
 
 
 const NaverBtn = styled.div`
     width: 296px;
     height: 40px;
     background-color: #5ab133;
-    border: 0px;
+    border: 0;
+    outline: 0;
     border-radius: 10px;
     text-align: left;
     
